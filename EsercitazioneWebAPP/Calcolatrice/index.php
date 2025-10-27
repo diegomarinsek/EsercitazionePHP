@@ -1,5 +1,5 @@
 <?php
-    include 'conf/config.php'; // path e il nome del file da includere
+    include once 'config.php'; // path e il nome del file da includere
     if(isset ($name))
         echo "<h1>$name</h1>";
     else
