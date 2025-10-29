@@ -2,8 +2,8 @@
 $risultato= "";
     if ($_SERVER["REQUEST_METHOD"]== "POST"){
 
-        $num1 = $_POST["primo numero"];
-        $num2 = $_POST["secondo numero"];
+        $num1 = (float) $_POST["primo_numero"];
+        $num2 = (float) $_POST["secondo_numero"];
         $operazione = $_POST["operazione"];
         
         if($operazione == "somma"){
@@ -35,10 +35,10 @@ $risultato= "";
 
     <form method="POST">
         <label>Numero 1:</label>
-        <input type="number" name="num1" step="any" required><br><br>
+        <input type="number" name="primo_numero" step="any" required><br><br>
 
         <label>Numero 2:</label>
-        <input type="number" name="num2" step="any" required><br><br>
+        <input type="number" name="secondo_numero" step="any" required><br><br>
 
         <label>Operazione:</label>
         <select name="operazione">
