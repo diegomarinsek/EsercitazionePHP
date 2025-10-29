@@ -24,3 +24,35 @@ $risultato= "";
 
     }
 ?>
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Calcolatrice semplice</title>
+</head>
+<body>
+    <h1>Calcolatrice PHP</h1>
+
+    <form method="POST">
+        <label>Numero 1:</label>
+        <input type="number" name="num1" step="any" required><br><br>
+
+        <label>Numero 2:</label>
+        <input type="number" name="num2" step="any" required><br><br>
+
+        <label>Operazione:</label>
+        <select name="operazione">
+            <option value="somma">Somma (+)</option>
+            <option value="sottrazione">Sottrazione (−)</option>
+            <option value="moltiplicazione">Moltiplicazione (×)</option>
+            <option value="divisione">Divisione (÷)</option>
+        </select><br><br>
+
+        <input type="submit" value="Calcola">
+    </form>
+
+    <?php if ($risultato !== ""): ?>
+        <h2>Risultato: <?= $risultato ?></h2>
+    <?php endif; ?>
+</body>
+</html>
