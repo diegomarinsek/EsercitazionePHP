@@ -1,7 +1,10 @@
 <?php
-    include once 'config.php'; // path e il nome del file da includere
-    if(isset ($name))
-        echo "<h1>$name</h1>";
-    else
-        echo "<h1>Impossibile accedere al file config.php</h1>"
+$risultato= "";
+    if ($_SERVER["REQUEST_METHOD"]== "POST"){
+
+        $num1 = $_POST["primo numero"];
+        $num2 = $_POST["secondo numero"];
+
+
+    }
 ?>

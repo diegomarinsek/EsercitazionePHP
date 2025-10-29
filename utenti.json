@@ -1,0 +1,80 @@
+[
+  {
+    "nome": "Luca",
+    "cognome": "Rossi",
+    "email": "luca.rossi@example.com",
+    "login": "lrossi",
+    "password": "pass1234"
+  },
+  {
+    "nome": "Maria",
+    "cognome": "Bianchi",
+    "email": "maria.bianchi@example.com",
+    "login": "mbianchi",
+    "password": "secure567"
+  },
+  {
+    "nome": "Giovanni",
+    "cognome": "Verdi",
+    "email": "giovanni.verdi@example.com",
+    "login": "gverdi",
+    "password": "mypassword"
+  },
+  {
+    "nome": "Anna",
+    "cognome": "Neri",
+    "email": "anna.neri@example.com",
+    "login": "aneri",
+    "password": "qwerty789"
+  },
+  {
+    "nome": "Marco",
+    "cognome": "Russo",
+    "email": "marco.russo@example.com",
+    "login": "mrusso",
+    "password": "abc12345"
+  },
+  {
+    "nome": "Francesca",
+    "cognome": "Fontana",
+    "email": "francesca.fontana@example.com",
+    "login": "ffontana",
+    "password": "passw0rd"
+  },
+  {
+    "nome": "Davide",
+    "cognome": "Gallo",
+    "email": "davide.gallo@example.com",
+    "login": "dgallo",
+    "password": "letmein12"
+  },
+  {
+    "nome": "Elena",
+    "cognome": "Marini",
+    "email": "elena.marini@example.com",
+    "login": "emarini",
+    "password": "12345abc"
+  },
+  {
+    "nome": "Paolo",
+    "cognome": "Ferrari",
+    "email": "paolo.ferrari@example.com",
+    "login": "pferrari",
+    "password": "password1"
+  },
+  {
+    "nome": "Sara",
+    "cognome": "Lombardi",
+    "email": "sara.lombardi@example.com",
+    "login": "slombardi",
+    "password": "sara2025"
+  },
+   {
+    "nome": "Diego",
+    "cognome": "Marinsek",
+    "email": "diego.marinsek@example.com",
+    "login": "dmarinsek",
+    "password": "diego00"
+  }
+
+]
