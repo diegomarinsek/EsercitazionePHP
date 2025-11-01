@@ -52,11 +52,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                     <option value="sottrazione">Sottrazione (−)</option>
                                     <option value="moltiplicazione">Moltiplicazione (×)</option>
                                     <option value="divisione">Divisione (÷)</option>
-                                    <div class="mb-3">
+                                   
+                                </select>
+                                 <div class="mb-3">
                                         <label for="secondo_numero" class="form-label">Numero 2:</label>
                                         <input type="number" class="form-control" id="secondo_numero" name="secondo_numero" step="any" required>
                                     </div>
-                                </select>
                             </div>
                             <div class="d-grid">
                                 <button type="submit" class="btn btn-primary">Calcola</button>
