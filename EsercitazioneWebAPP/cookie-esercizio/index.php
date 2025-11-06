@@ -15,7 +15,7 @@
 
     <?php
    if(isset($_COOKIE["utente"])){
-    echo "Benvenuto";
+    echo "Benvenuto <br>";
     echo '<a href="delete-cookie.php">Elimina cookie</a>';
    }else{
     echo ' 
@@ -25,7 +25,7 @@
     <input type = "text" name="nome">
     <button type="submit">Imposta cookie</button>
     </form>
-    '
+    ';
    }
 
 

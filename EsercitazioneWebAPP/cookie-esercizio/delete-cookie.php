@@ -1,6 +1,5 @@
 <?php
-$form = $_POST["action"];
 
-setcookie("utente","Mario",time()-3600);
+setcookie("utente","",time()-3600);
 
 ?>
