@@ -12,7 +12,7 @@
     <form action = "set-cookie.php"  method = "POST"> 
     <?php
 
-    echo("Benvenuto!"+ "delete-cookie.php");
+    echo "Benvenuto!" . "delete-cookie.php";
     
 
 
