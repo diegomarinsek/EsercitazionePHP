@@ -9,16 +9,29 @@
     <title>Cookie Esercizio</title>
 </head>
 <body>
-    <form action = "set-cookie.php"  method = "POST"> 
-    <?php
 
-    echo "Benvenuto!" . "delete-cookie.php";
-    
+
+
+
+    <?php
+   if(isset($_COOKIE["utente"])){
+    echo "Benvenuto";
+    echo '<a href="delete-cookie.php">Elimina cookie</a>';
+   }else{
+    echo ' 
+    <form action = "set-cookie.php"  method = "POST"> 
+    <label for = "nome">Inserisci il tuo nome 
+    </label>
+    <input type = "text" name="nome">
+    <button type="submit">Imposta cookie</button>
+    </form>
+    '
+   }
 
 
     ?>
 
-    </form>
+    
     
 </body>
 </html>
