@@ -6,6 +6,7 @@
     <title>Esercizio 2 cookie</title>
 </head>
 <body>
+    <form action="personalizzazione.php" method = POST>
     <label for= "nome">Inserire nome</label>
     <input type="text" name = "nome">
     <label for= "cognome">Inserire cognome</label>
@@ -16,8 +17,8 @@
     <input type="color" name = "coloreTesto">
     <label for="coloreSfondo">Inserire colore sfondo </label>
     <input type="color" name = "coloreSfondo">
-    
     <button type = "submit">Invia</button>
+    </form>
 </body>
 </html>
 
