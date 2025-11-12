@@ -5,4 +5,7 @@ $inputfont = $_POST["inputfont"];
 $coloreTesto= = $_POST["coloreTesto"];
 $coloreSfondo= $_POST["coloreSfondo"];
 
+
+$valori =($nome,$cognome,$inputfont,$coloreTesto,$coloreSfondo);
+setcookie("preferenze",$)
 ?>
