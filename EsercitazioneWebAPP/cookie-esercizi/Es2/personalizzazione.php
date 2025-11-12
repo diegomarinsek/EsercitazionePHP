@@ -7,7 +7,7 @@ $coloreSfondo= $_POST["coloreSfondo"];
 
 
 $valori =($nome,$cognome,$inputfont,$coloreTesto,$coloreSfondo);
-setcookie("preferenze",$valori, time()+200);
+setcookie("preferenze",$valori,time()+200);
 ?>
 <!DOCTYPE html>
 <html lang="en">
