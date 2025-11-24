@@ -1,6 +1,17 @@
-
 [
     { "id": 1, "nome": "Bottiglia" },
     { "id": 2, "nome": "Libro" },
-    { "id": 3, "nome": "Matita" }
+    { "id": 3, "nome": "Matita" },
+    { "id": 4, "nome": "Quaderno" },
+    { "id": 5, "nome": "Zaino" },
+    { "id": 6, "nome": "Laptop" },
+    { "id": 7, "nome": "Penna" },
+    { "id": 8, "nome": "Calcolatrice" },
+    { "id": 9, "nome": "Mouse" },
+    { "id": 10, "nome": "Tazza" },
+    { "id": 11, "nome": "Occhiali" },
+    { "id": 12, "nome": "Orologio" },
+    { "id": 13, "nome": "Cuffie" },
+    { "id": 14, "nome": "Telefono" },
+    { "id": 15, "nome": "Lampada" }
 ]
