@@ -24,4 +24,3 @@ setcookie("preferenze",$valori,time()+1000);
     ?>
     
 </body>
-</html>
