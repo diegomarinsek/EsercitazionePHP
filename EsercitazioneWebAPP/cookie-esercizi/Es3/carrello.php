@@ -32,9 +32,7 @@ if(isset($_POST['aggiungi'])){
         $_SESSION['carrello'][$idProdotto]++;
     }
 }
-echo '
-?>
-<!DOCTYPE html>
+echo '<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -47,5 +45,7 @@ echo '
 </body>
 </html>'
 
+$vuoto = true;
+    echo    ""
         
 
