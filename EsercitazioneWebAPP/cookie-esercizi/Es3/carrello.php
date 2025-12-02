@@ -1,51 +1,54 @@
 <?php
 session_start();
+
 if (!isset($_SESSION['utente'])) {
-    header("Location: index.php");
+    echo "<p>Devi effettuare il login per vedere il carrello.</p>";
     exit;
 }
+
 $oggetti = json_decode(file_get_contents("oggetti.json"), true);
-$prodottiperId= [];
-foreach ($oggetti as $prodotto){
-    $prodottiperId[$prodotto['id']] = $prodotto['nome'];
-    
+$prodottiPerId = [];
+
+foreach ($oggetti as $p) {
+    $prodottiPerId[$p['id']] = $p['nome'];
 }
+
 if (!isset($_SESSION['carrello'])) {
     $_SESSION['carrello'] = [];
 }
+
 if (isset($_GET['rimuovi'])) {
-    $idDaRimuovere = $_GET['rimuovi'];
-
-    if (isset($_SESSION['carrello'][$idDaRimuovere])) {
-        $_SESSION['carrello'][$idDaRimuovere] = 0; 
-    }
-
-    header("Location: carrello.php");
-    exit;
-}
-
-if(isset($_POST['aggiungi'])){
-    $idProdotto = $_POST['aggiungi'];
-    if(!isset($_SESSION['carrello'][$idProdotto])){
-        $_SESSION['carrello'][$idProdotto] = 1;
-    }else{
-        $_SESSION['carrello'][$idProdotto]++;
+    $id = $_GET['rimuovi'];
+    if (isset($_SESSION['carrello'][$id])) {
+        unset($_SESSION['carrello'][$id]);
     }
 }
-echo '<!DOCTYPE html>
-<html lang="en">
+?>
+<!DOCTYPE html>
+<html lang="it">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carrello</title>
 </head>
 <body>
-        <h1>Il tuo carrello</h1>
+
+<h1>Il tuo carrello</h1>
+
+<?php
+if (empty($_SESSION['carrello'])) {
+    echo "<p>Il tuo carrello è vuoto.</p>";
+} else {
+    echo "<ul>";
+    foreach ($_SESSION['carrello'] as $id => $qta) {
+        if (!isset($prodottiPerId[$id])) continue;
+        echo "<li>" . $prodottiPerId[$id] . " — Quantità: " . $qta . 
+             " <a href='carrello.php?rimuovi=$id'>Rimuovi</a></li>";
+    }
+    echo "</ul>";
+}
+?>
+
+<p><a href="oggetti.php">Torna ai prodotti</a></p>
 
 </body>
-</html>'
-
-$vuoto = true;
-    echo    ""
-        
-
+</html>

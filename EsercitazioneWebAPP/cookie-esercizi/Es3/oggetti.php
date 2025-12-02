@@ -6,43 +6,43 @@ if (!isset($_SESSION['utente'])) {
     exit;
 }
 
-$oggetti = json_decode(file_get_contents(__DIR__ . "/oggetti.json"), true);
+$oggetti = json_decode(file_get_contents("oggetti.json"), true);
 
 if (!isset($_SESSION['carrello'])) {
     $_SESSION['carrello'] = [];
 }
 
-$messaggio = "";
 if (isset($_GET['add'])) {
     $id = $_GET['add'];
-    $_SESSION['carrello'][] = $id;
-    $messaggio = "Prodotto aggiunto al carrello!";
+    if (!isset($_SESSION['carrello'][$id])) {
+        $_SESSION['carrello'][$id] = 1;
+    } else {
+        $_SESSION['carrello'][$id]++;
+    }
 }
-
-echo '<!DOCTYPE html>
+?>
+<!DOCTYPE html>
 <html lang="it">
 <head>
     <meta charset="UTF-8">
     <title>Prodotti</title>
 </head>
 <body>
-    <h1>Lista Prodotti</h1>
-';
 
-if ($messaggio !== "") {
-    echo "<p style='color:green;'>$messaggio</p>";
-}
+<h1>Lista Prodotti</h1>
 
+<?php
 foreach ($oggetti as $prodotto) {
     echo "<div>";
-    echo "<h3>{$prodotto['nome']}</h3>";
-    echo "<a href='oggetti.php?add={$prodotto['id']}'>Aggiungi al carrello</a>";
+    echo "<h3>" . $prodotto['nome'] . "</h3>";
+    echo "<a href='oggetti.php?add=" . $prodotto['id'] . "'>Aggiungi al carrello</a>";
     echo "</div><hr>";
 }
-
-echo "<p><a href='carrello.php'>Vai al carrello</a></p>";
-echo "<p><a href='logout.php'>Logout</a></p>";
-
-echo '</body>
-</html>';
 ?>
+
+<p><a href="carrello.php">Vai al carrello</a></p>
+<p><a href="logout.php">Logout</a></p>
+
+</body>
+</html>
+

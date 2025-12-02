@@ -2,41 +2,35 @@
 session_start();
 
 $error = "";
-$statoLogin = false; 
+$login = false;
+
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-
     $utenti = json_decode(file_get_contents("utenti.json"), true);
-
     $username = $_POST["username"];
     $password = $_POST["password"];
 
-    $utenteTrovato = null;
-
-    foreach ($utenti as $utente) {
-        if ($utente["username"] === $username && $utente["password"] === $password) {
-            $utenteTrovato = $utente;
+    $trovato = null;
+    foreach ($utenti as $u) {
+        if ($u["username"] === $username && $u["password"] === $password) {
+            $trovato = $u;
             break;
         }
     }
 
-    if ($utenteTrovato !== null) {
+    if ($trovato !== null) {
         $_SESSION["utente"] = [
-            "id" => $utenteTrovato["id"],
-            "username" => $utenteTrovato["username"]
+            "id" => $trovato["id"],
+            "username" => $trovato["username"]
         ];
-
         if (!isset($_SESSION["carrello"])) {
             $_SESSION["carrello"] = [];
         }
-
-        $statoLogin = true; // 
-
+        $login = true;
     } else {
         $error = "Credenziali errate";
     }
 }
-
-echo '
+?>
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -58,23 +52,17 @@ echo '
 
     <button type="submit">Accedi</button>
 </form>
-';
 
-
+<?php
 if ($error !== "") {
     echo "<p style='color:red;'>$error</p>";
 }
 
-
-if ($statoLogin) {
-    echo "
-        <p style='color:green;'>Login effettuato!</p>
-        <a href='oggetti.php'>Vai ai prodotti</a>
-    ";
+if ($login) {
+    echo "<p style='color:green;'>Login effettuato!</p>";
+    echo "<a href='oggetti.php'>Vai ai prodotti</a>";
 }
+?>
 
-echo '
 </body>
 </html>
-';
-?>
